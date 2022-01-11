@@ -51,7 +51,7 @@ public class RentalController {
         return rental.save(m);
     }
 
-    @DeleteMapping("/rental/{idproduct}")
+    @DeleteMapping("/rental/idmobil")
     public ResponseEntity<HttpStatus> deleteMobilById(@PathVariable String idproduct) {
         rental.deleteById(idproduct);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
