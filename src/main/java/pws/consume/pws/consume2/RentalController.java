@@ -37,8 +37,8 @@ public class RentalController {
     }
 
     @GetMapping("/rental/{idmobil}")
-    public Mobil getMobilById(@PathVariable String idproduct) {
-        return rental.findById(idproduct).get();
+    public Mobil getMobilById(@PathVariable String id) {
+        return rental.findById(id).get();
     }
 
     @PostMapping("/rental")
@@ -51,9 +51,9 @@ public class RentalController {
         return rental.save(m);
     }
 
-    @DeleteMapping("/rental/idmobil")
-    public ResponseEntity<HttpStatus> deleteMobilById(@PathVariable String idproduct) {
-        rental.deleteById(idproduct);
+    @DeleteMapping("/rental")
+    public ResponseEntity<HttpStatus> deleteMobilById(@PathVariable String id) {
+        rental.deleteById(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
